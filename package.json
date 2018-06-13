@@ -1,0 +1,30 @@
+{
+  "name": "stringify-object-keys",
+  "version": "1.0.0",
+  "description": "Get full stringified paths of each key of an object",
+  "author": "Gabriel Toll Stålbom <gabtost@gmail.com>",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabbes/stringify-object-keys.git"
+  },
+  "keywords": [
+    "stringify",
+    "object",
+    "array",
+    "keys",
+    "path"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gabbes/stringify-object-keys/issues"
+  },
+  "homepage": "https://github.com/gabbes/stringify-object-keys#readme",
+  "devDependencies": {
+    "lodash.isequal": "^4.5.0",
+    "tape": "^4.9.1"
+  }
+}
