@@ -1,3 +1,3 @@
 # Contributing
 
-Please see adhere to coding standards assigned in [editorconfig](./editorconfig).
+Please see adhere to coding standards assigned in [editorconfig](./.editorconfig).
