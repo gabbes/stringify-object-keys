@@ -24,10 +24,9 @@ const obj = {
     name: {
       first: 'George',
       last: 'Bluth'
-    }
-  }, {
-    first: 'Buster',
-    last: 'Bluth'
+    }, {
+      first: 'Buster',
+      last: 'Bluth'
   }]
 };
 
