@@ -1,5 +1,5 @@
 .editorconfig
+.eslintrc.yml
 .travis.yml
-CHANGELOG.md
 CONTRIBUTING.md
-test.js
+/test

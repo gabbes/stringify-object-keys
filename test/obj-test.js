@@ -1,10 +1,7 @@
-const test = require('tape');
-const _isEqual = require('lodash.isequal');
-const stringifyObjectKeys = require('./');
+const isEqual = require('lodash.isequal');
+const stringifyObjectKeys = require('../');
 
-test('does it work?', t => {
-  t.plan(1);
-
+module.exports = function objTest() {
   const obj = {
     _id: 213782167536,
     organization: {
@@ -12,22 +9,22 @@ test('does it work?', t => {
       business: 'real estate development firm',
       founded: {
         year: 1953,
-        by: 'George Bluth'
+        by: 'George Bluth',
       },
       associates: ['Lucille Austero', 'Stan Sitwell'],
       ceo: {
         name: {
           first: 'Lucille',
-          last: 'Bluth'
-        }
-      }
+          last: 'Bluth',
+        },
+      },
     },
     otherVentures: [
       {
         name: 'Frozen Banana Stand',
-        location: ['Newport Beach boardwalk', 'Balboa Island']
-      }
-    ]
+        location: ['Newport Beach boardwalk', 'Balboa Island'],
+      },
+    ],
   };
 
   const control = [
@@ -42,10 +39,10 @@ test('does it work?', t => {
     'organization.ceo.name.last',
     'otherVentures[0].name',
     'otherVentures[0].location[0]',
-    'otherVentures[0].location[1]'
+    'otherVentures[0].location[1]',
   ];
 
   const result = stringifyObjectKeys(obj);
 
-  t.true(_isEqual(result, control));
-});
+  return isEqual(result, control);
+};
