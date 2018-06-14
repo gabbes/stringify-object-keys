@@ -1,10 +1,10 @@
 'use strict';
 
-module.exports = function (tree) {
+module.exports = function stringifyObjectKeys(tree) {
   var array = [];
 
   function walk(obj, path) {
-    Object.keys(obj).forEach(key => {
+    Object.keys(obj).forEach(function(key) {
     var branch = path;
 
     if (Array.isArray(obj)) {

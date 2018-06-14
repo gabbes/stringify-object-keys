@@ -1,3 +1,5 @@
+[![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/stringify-object-keys)[![Build Status](https://travis-ci.org/gabbes/stringify-object-keys.svg?branch=master)](https://travis-ci.org/gabbes/stringify-object-keys)
+
 # Stringify Object Keys
 
 📝 Get full stringified paths of each key of an object.
@@ -5,7 +7,7 @@
 ## Install
 
 ```sh
-$ npm install stringify-object-keys
+npm install stringify-object-keys
 ```
 
 ## Usage
@@ -18,18 +20,15 @@ const obj = {
     first: 'Nichael',
     last: 'Bluth'
   },
-  siblings: [
-    {
-      name: {
-        first: 'George',
-        last: 'Bluth'
-      }
-    },
-    {
-      first: 'Buster',
+  siblings: [{
+    name: {
+      first: 'George',
       last: 'Bluth'
     }
-  ]
+  }, {
+    first: 'Buster',
+    last: 'Bluth'
+  }]
 };
 
 console.log(stringifyObjectKeys(obj));
@@ -48,12 +47,16 @@ console.log(stringifyObjectKeys(obj));
 ## Development
 
 ```sh
-$ git clone https://github.com/gabbes/stringify-object-keys
+git clone https://github.com/gabbes/stringify-object-keys
 ```
 
 ## Contribute
 
-Please do!
+[Please do!](./CONTRIBUTING)
+
+## Changelog
+
+[Please see this file.](./CHANGELOG)
 
 ## License
 
