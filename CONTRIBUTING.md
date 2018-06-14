@@ -1,3 +1,3 @@
 # Contributing
 
-Please see [README](README.md#Contribute).
+Please see adhere to coding standards assigned in [editorconfig](./editorconfig).

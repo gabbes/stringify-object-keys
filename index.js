@@ -5,21 +5,21 @@ module.exports = function stringifyObjectKeys(tree) {
 
   function walk(obj, path) {
     Object.keys(obj).forEach(function(key) {
-    var branch = path;
+      var branch = path;
 
-    if (Array.isArray(obj)) {
-      branch += `[${key}]`;
-    } else if (branch) {
-      branch += `.${key}`;
-    } else {
-      branch += key;
-    }
+      if (Array.isArray(obj)) {
+        branch += `[${key}]`;
+      } else if (branch) {
+        branch += `.${key}`;
+      } else {
+        branch += key;
+      }
 
-    if (typeof obj[key] === 'object') {
-      return walk(obj[key], branch);
-    }
+      if (typeof obj[key] === 'object') {
+        return walk(obj[key], branch);
+      }
 
-    return array.push(branch);
+      return array.push(branch);
     });
   }
 
