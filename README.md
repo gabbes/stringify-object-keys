@@ -53,15 +53,15 @@ console.log(stringifyObjectKeys(obj));
 git clone https://github.com/gabbes/stringify-object-keys
 ```
 
-If you wish to contribute your changes to this projects, please [read this](./CONTRIBUTING).
+If you wish to contribute your changes to this projects, please [read this](./CONTRIBUTING.md).
 
 ## Contribute
 
-Please do, [but read this first](./CONTRIBUTING)!
+Please do, [but read this first](./CONTRIBUTING.md)!
 
 ## Changelog
 
-[See documentation.](./CHANGELOG)
+[See documentation.](./CHANGELOG.md)
 
 ## License
 
