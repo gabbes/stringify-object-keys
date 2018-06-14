@@ -1,7 +1,7 @@
 {
   "name": "stringify-object-keys",
   "description": "Get full stringified paths of each key of an object.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "license": "MIT",
   "author": "Gabriel Toll Stålbom <gabtost@gmail.com>",
   "main": "index.js",
