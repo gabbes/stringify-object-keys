@@ -9,7 +9,7 @@ module.exports = function stringifyObjectKeys(tree) {
   var array = [];
 
   function walk(obj, path) {
-    // Loop through each key of recieved object
+    // Loop through each key of received object
     Object.keys(obj).forEach(function(key) {
       var branch = path;
 
