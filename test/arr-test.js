@@ -6,14 +6,14 @@ module.exports = function objTest() {
     'George Oscar Bluth, Sr.',
     {
       siblings: [
-        'Oscar George Bluth',
-      ],
-    },
+        'Oscar George Bluth'
+      ]
+    }
   ];
 
   const control = [
     '[0]',
-    '[1].siblings[0]',
+    '[1].siblings[0]'
   ];
 
   const result = stringifyObjectKeys(arr);
