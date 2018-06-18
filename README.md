@@ -1,63 +1,48 @@
-# Stringify Object Keys
+# Stringify Object Keys [![Build Status](https://travis-ci.org/gabbes/stringify-object-keys.svg?branch=master)](https://travis-ci.org/gabbes/stringify-object-keys) [![npm](https://img.shields.io/npm/v/stringify-object-keys.svg)](https://www.npmjs.com/package/stringify-object-keys)
 
-[![Build Status](https://travis-ci.org/gabbes/stringify-object-keys.svg?branch=master)](https://travis-ci.org/gabbes/stringify-object-keys)[![npm](https://img.shields.io/npm/v/stringify-object-keys.svg)](https://www.npmjs.com/package/stringify-object-keys)
+> Get stringified keys from an object or array.
 
-🌳 Get full stringified branch path for each key of an object.
+Recieves an object or array and returns an array with all keys/indices stringified.
 
-## Installation
+## Install
 
 ```sh
-npm install stringify-object-keys
+npm install --save stringify-object-keys
 ```
 
-## Sample Usage
+## Usage
 
 ```js
-const stringifyObjectKeys = require('stringify-object-keys');
+const stringify = require('stringify-object-keys');
 
-const obj = {
-  name: {
-    first: 'Nichael',
-    last: 'Bluth'
+const person = {
+  name: 'Nichael Bluth',
+  born: {
+    day: 14,
+    month: 12,
+    year: 1967
   },
-  siblings: [
-    {
-      name: {
-        first: 'George',
-        last: 'Bluth'
-      },
-      name: {
-        first: 'Buster',
-        last: 'Bluth'
-      }
-    }
-  ]
+  siblings: ['George', 'Lidsay', 'Buster']
 };
 
-console.log(stringifyObjectKeys(obj));
+const keys = stringify(person);
+
 /*
-  [
-    'name.first',
-    'name.last',
-    'siblings[0].name.first',
-    'siblings[0].name.last',
-    'siblings[1].name.first',
-    'siblings[1].name.last',
+  keys => [
+    'name',
+    'born.day',
+    'born.month',
+    'born.year',
+    'siblings[0]',
+    'siblings[1]',
+    'siblings[2]',
   ]
 */
 ```
 
-## Development
-
-```sh
-git clone https://github.com/gabbes/stringify-object-keys
-```
-
-If you wish to contribute your changes to this projects, please [read this](./CONTRIBUTING.md).
-
 ## Contribute
 
-Please do, [but read this first](./CONTRIBUTING.md)!
+[Contribution guidelines.](./CONTRIBUTING.md)!
 
 ## Changelog
 

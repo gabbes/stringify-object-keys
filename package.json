@@ -1,6 +1,6 @@
 {
   "name": "stringify-object-keys",
-  "description": "Get full stringified paths of each key of an object.",
+  "description": "Get stringified keys from an object or array.",
   "version": "1.1.1",
   "license": "MIT",
   "author": "Gabriel Toll Stålbom <gabtost@gmail.com>",
