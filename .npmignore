@@ -1,5 +1,6 @@
 .editorconfig
 .eslintrc.yml
+.gitattributes
 .travis.yml
 CONTRIBUTING.md
 /test
