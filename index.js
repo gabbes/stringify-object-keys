@@ -1,37 +1,41 @@
 'use strict';
 
-module.exports = function stringifyObjectKeys(tree) {
-  // If not an object, return an empty array
-  if (!tree || typeof tree !== 'object') {
-    return [];
-  }
-
+module.exports = function(tree) {
   var array = [];
 
   function walk(obj, path) {
-    // Loop through each key of received object
-    Object.keys(obj).forEach(function(key) {
-      var branch = path;
+    var keys = Object.keys(obj);
 
-      // Determine if key should be an array index or an object key
-      if (Array.isArray(obj)) {
-        branch += '[' + key + ']';
-      } else if (branch) {
-        branch += '.' + key;
-      } else {
-        branch += key;
-      }
-
-      // If object key is a object, walk through its keys
-      if (typeof obj[key] === 'object') {
-        return walk(obj[key], branch);
-      }
-
-      return array.push(branch);
-    });
+    // Loop through each key and explore value
+    for (var i = 0; i < keys.length; i++) {
+      explore(obj, keys[i], path);
+    }
   }
 
-  walk(tree, '');
+  function explore(obj, key, path) {
+    var branch = path;
+
+    // Determine format and append to branch
+    if (Array.isArray(obj)) {
+      branch += '[' + key + ']';
+    } else if (branch) {
+      branch += '.' + key;
+    } else {
+      branch += key;
+    }
+
+    // If key value is an object, walk it
+    if (typeof obj[key] === 'object') {
+      return walk(obj[key], branch);
+    }
+
+    return array.push(branch);
+  }
+
+  // If received tree is an object, initialize walk
+  if (!!tree && typeof tree === 'object') {
+    walk(tree, '');
+  }
 
   return array;
 };
