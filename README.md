@@ -38,7 +38,7 @@ console.log(stringify(family));
 
 ## Contribute
 
-[Contribution guidelines.](./CONTRIBUTING.md)!
+[Contribution guidelines.](./CONTRIBUTING.md)
 
 ## Changelog
 
