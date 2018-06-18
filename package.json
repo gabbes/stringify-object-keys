@@ -5,6 +5,9 @@
   "license": "MIT",
   "author": "Gabriel Toll Stålbom <gabtost@gmail.com>",
   "main": "index.js",
+  "engines": {
+    "node": ">=4.0"
+  },
   "keywords": [
     "stringify",
     "object",
