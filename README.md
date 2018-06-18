@@ -15,27 +15,23 @@ npm install --save stringify-object-keys
 ```js
 const stringify = require('stringify-object-keys');
 
-const person = {
-  name: 'Nichael Bluth',
-  born: {
-    day: 14,
-    month: 12,
-    year: 1967
-  },
-  siblings: ['George', 'Lidsay', 'Buster']
+const family = {
+  lastname: 'Bluth',
+  members: [
+    { firstname: 'Nichael' }
+    { firstname: 'George' }
+    { firstname: 'Buster' }
+  ]
 };
 
-const keys = stringify(person);
+console.log(stringify(family));
 
 /*
-  keys => [
-    'name',
-    'born.day',
-    'born.month',
-    'born.year',
-    'siblings[0]',
-    'siblings[1]',
-    'siblings[2]',
+  [
+    'lastname',
+    'members[0].firstname
+    'members[1].firstname
+    'members[2].firstname
   ]
 */
 ```
