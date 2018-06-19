@@ -6,7 +6,7 @@ You are very welcome to contribute to this project! Please follow the informatio
 
 This is a pretty simple script and keeping ES5 and IE11 compatibility does not sacrifice that much. A build step for such a small project feels a bit overkill, so we have to keep compatibility manually! If you're unsure how to make something functional in ES5, check out the [Babel REPL](https://babeljs.io/repl/) with the es2015 preset.
 
-We also use a Eslint plugin to help check outselves and keep code ES5 compatible, read more on this below.
+We also use a Eslint plugin to help check ourselves and keep code ES5 compatible, read more on this below.
 
 ## Coding standards
 
