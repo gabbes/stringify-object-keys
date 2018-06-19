@@ -21,6 +21,13 @@ describe('stringify-object-keys', () => {
       assert.deepEqual(stringify(obj), expected);
     });
 
+    it('handles object keys with dots correctly', () => {
+      const obj = { a: { 'b.b': { c: 'c' } } };
+      const expected = ['a["b.b"].c'];
+
+      assert.deepEqual(stringify(obj), expected);
+    });
+
     it('handles arrays correctly', () => {
       const obj = ['a', [ 'b', 'c', [ 'd' ] ]]
       const expected = ['[0]', '[1][0]', '[1][1]', '[1][2][0]'];
@@ -29,8 +36,8 @@ describe('stringify-object-keys', () => {
     });
 
     it('handles mixed objects and arrays correctly', () => {
-      const obj = ['a', { b: 'b', c: [ 'd', { e: 'e' } ] }]
-      const expected = ['[0]', '[1].b', '[1].c[0]', '[1].c[1].e'];
+      const obj = ['a', { b: 'b', c: [ 'c', { 'd.d': 'd' } ] }]
+      const expected = ['[0]', '[1].b', '[1].c[0]', '[1].c[1]["d.d"]'];
 
       assert.deepEqual(stringify(obj), expected);
     });

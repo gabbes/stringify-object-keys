@@ -18,6 +18,8 @@ module.exports = function(tree) {
     // Determine format and append to branch
     if (Array.isArray(obj)) {
       branch += '[' + key + ']';
+    } else if (key.indexOf('.') !== -1) {
+      branch += '["' + key + '"]';
     } else if (branch) {
       branch += '.' + key;
     } else {
