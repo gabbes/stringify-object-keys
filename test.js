@@ -3,7 +3,7 @@ const _get = require('lodash.get');
 const stringify = require('./');
 
 describe('stringify-object-keys', () => {
-  it('handles incorrect parameter correctly', () => {
+  it('handles invalid parameter correctly', () => {
     assert.deepEqual(stringify(), []);
     assert.deepEqual(stringify(undefined), []);
     assert.deepEqual(stringify(null), []);
@@ -14,7 +14,7 @@ describe('stringify-object-keys', () => {
     assert.deepEqual(stringify(function() {}), []);
   });
 
-  describe('object parameter', () => {
+  describe('valid object parameter', () => {
     it('handles objects correctly', () => {
       const obj = { a: 'a', b: { c: 'c', d: { e: { f: 'f' } } } };
       const expected = ['a', 'b.c', 'b.d.e.f'];
@@ -29,9 +29,23 @@ describe('stringify-object-keys', () => {
       assert.deepEqual(stringify(obj), expected);
     });
 
+    it('handles empty objects correctly', () => {
+      const obj = [1, {}, 2]
+      const expected = ['[0]', '[1]', '[2]'];
+
+      assert.deepEqual(stringify(obj), expected);
+    });
+
     it('handles arrays correctly', () => {
       const obj = ['a', [ 'b', 'c', [ 'd' ] ]]
       const expected = ['[0]', '[1][0]', '[1][1]', '[1][2][0]'];
+
+      assert.deepEqual(stringify(obj), expected);
+    });
+
+    it('handles empty arrays correctly', () => {
+      const obj = [1, [], 2]
+      const expected = ['[0]', '[1]', '[2]'];
 
       assert.deepEqual(stringify(obj), expected);
     });
