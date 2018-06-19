@@ -44,8 +44,10 @@ describe('stringify-object-keys', () => {
     });
 
     it('handles lodash.get correctly', () => {
-      const obj = [{ a: [ { 'b.c.d': ['e'] } ] }];
-      assert.deepEqual(_get(obj, '[0].a[0][\'b.c.d\']'), ['e']);
+      const obj = [1, { a: [ { 'b.c.d': ['e'] } ] }, 3];
+      const keys = stringify(obj);
+
+      assert.deepEqual(_get(obj, keys[1]), 'e');
     });
   });
 });
