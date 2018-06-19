@@ -31,8 +31,8 @@ console.log(stringify(family));
 /*
   [
     'lastname',
-    'members[0][0]
-    'members[1].firstname
+    'members[0][0],
+    'members[1].firstname,
     'members[2]["first.name"]
   ]
 */
