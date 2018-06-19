@@ -1,4 +1,5 @@
 const assert = require('assert');
+const _get = require('lodash.get');
 const stringify = require('./');
 
 describe('stringify-object-keys', () => {
@@ -23,7 +24,7 @@ describe('stringify-object-keys', () => {
 
     it('handles object keys with dots correctly', () => {
       const obj = { a: { 'b.b': { c: 'c' } } };
-      const expected = ['a["b.b"].c'];
+      const expected = ['a[\'b.b\'].c'];
 
       assert.deepEqual(stringify(obj), expected);
     });
@@ -37,9 +38,14 @@ describe('stringify-object-keys', () => {
 
     it('handles mixed objects and arrays correctly', () => {
       const obj = ['a', { b: 'b', c: [ 'c', { 'd.d': 'd' } ] }]
-      const expected = ['[0]', '[1].b', '[1].c[0]', '[1].c[1]["d.d"]'];
+      const expected = ['[0]', '[1].b', '[1].c[0]', '[1].c[1][\'d.d\']'];
 
       assert.deepEqual(stringify(obj), expected);
+    });
+
+    it('handles lodash.get correctly', () => {
+      const obj = [{ a: [ { 'b.c.d': ['e'] } ] }];
+      assert.deepEqual(_get(obj, '[0].a[0][\'b.c.d\']'), ['e']);
     });
   });
 });

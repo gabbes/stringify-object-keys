@@ -19,7 +19,7 @@ module.exports = function(tree) {
     if (Array.isArray(obj)) {
       branch += '[' + key + ']';
     } else if (key.indexOf('.') !== -1) {
-      branch += '["' + key + '"]';
+      branch += '[\'' + key + '\']';
     } else if (branch) {
       branch += '.' + key;
     } else {
