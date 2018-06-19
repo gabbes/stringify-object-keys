@@ -4,6 +4,8 @@
 
 Recieves an object or array and returns an array with all keys/indices stringified.
 
+Key strings are formatted in syntax compatible with popular framework methods, such as lodash.get, even supports keys with dots in their names!
+
 ## Install
 
 ```sh
@@ -18,9 +20,9 @@ const stringify = require('stringify-object-keys');
 const family = {
   lastname: 'Bluth',
   members: [
-    { firstname: 'Nichael' }
-    { firstname: 'George' }
-    { firstname: 'Buster' }
+    ['Nichael'],
+    { firstname: 'George' },
+    { 'first.name': 'Buster' }
   ]
 };
 
@@ -29,9 +31,9 @@ console.log(stringify(family));
 /*
   [
     'lastname',
-    'members[0].firstname
+    'members[0][0]
     'members[1].firstname
-    'members[2].firstname
+    'members[2]["first.name"]
   ]
 */
 ```
