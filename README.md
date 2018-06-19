@@ -19,11 +19,13 @@ const stringify = require('stringify-object-keys');
 
 const family = {
   lastname: 'Bluth',
-  members: [
-    ['Nichael'],
-    { firstname: 'George' },
-    { 'first.name': 'Buster' }
-  ]
+  members: [{
+    firstname: 'Nichael',
+    nicknames: []
+  }, {
+    'first.name': 'George',
+    nicknames: ['GOB', 'Getaway']
+  }]
 };
 
 console.log(stringify(family));
@@ -31,9 +33,11 @@ console.log(stringify(family));
 /*
   [
     'lastname',
-    'members[0][0]',
-    'members[1].firstname',
-    'members[2][\'first.name\']'
+    'members[0].firstname',
+    'members[0].nicknames',
+    'members[1][\'first.name\']',
+    'members[1].nicknames[0]'
+    'members[1].nicknames[1]'
   ]
 */
 ```
