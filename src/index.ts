@@ -20,7 +20,7 @@ export = function(tree: any[] | { [key: string]: any }) {
         : key;
 
       // If key value is an object with keys, walk it
-      if (typeof obj[key] === "object") {
+      if (!!obj[key] && typeof obj[key] === "object") {
         const objKeys = Object.keys(obj[key]);
 
         if (objKeys.length) {
