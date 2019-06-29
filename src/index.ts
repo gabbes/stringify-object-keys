@@ -24,7 +24,8 @@ export = function(tree: any[] | { [key: string]: any }) {
         const objKeys = Object.keys(obj[key]);
 
         if (objKeys.length) {
-          return walk(obj[key], objKeys, branch);
+          walk(obj[key], objKeys, branch);
+          continue;
         }
       }
 
