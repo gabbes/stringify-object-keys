@@ -1,29 +1,27 @@
-export = function(tree: { [key: string]: any }) {
-  var array: string[] = [];
+export = function(tree: any[] | { [key: string]: any }) {
+  const array: string[] = [];
 
   function walk(
     obj: { [key: string]: any },
     keys: string[],
-    path: string
+    previous: string
   ): void {
-    for (var i = 0; i < keys.length; i++) {
-      var key = keys[i];
-      var branch = path;
+    for (let i = 0; i < keys.length; i++) {
+      const key = keys[i];
+      let branch = previous;
 
       // Determine format and append to branch
-      if (Array.isArray(obj)) {
-        branch += "[" + key + "]";
-      } else if (key.indexOf(".") !== -1) {
-        branch += "['" + key + "']";
-      } else if (branch) {
-        branch += "." + key;
-      } else {
-        branch += key;
-      }
+      branch += Array.isArray(obj)
+        ? "[" + key + "]"
+        : key.indexOf(".") !== -1
+        ? "['" + key + "']"
+        : branch
+        ? "." + key
+        : key;
 
       // If key value is an object with keys, walk it
       if (typeof obj[key] === "object") {
-        var objKeys = Object.keys(obj[key]);
+        const objKeys = Object.keys(obj[key]);
 
         if (objKeys.length) {
           return walk(obj[key], objKeys, branch);
