@@ -1,3 +1,4 @@
-.prettierrc
 .gitattributes
+.prettierrc
 test.js
+yarn.lock
