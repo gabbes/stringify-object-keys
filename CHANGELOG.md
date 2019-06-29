@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.2.5 - 2019-06-29
+
+### Changed
+
+- Doesn't publish tsconfig.json anymore.
+
 ## 1.2.4 - 2019-06-29
 
 ### Added
