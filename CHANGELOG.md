@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.2.4 - 2019-06-29
+
+### Added
+
+- Type declarations.
+
+### Changed
+
+- Lots of changes to development setup, removed old dependencies and unnecessary services, Prettier for formatting, uses TypeScript now as well for type declaration and compiling to es5.
+
 ## 1.2.0 - 2018-06-19
 
 ### Added
