@@ -1,4 +1,4 @@
-# Stringify Object Keys [![Build Status](https://travis-ci.org/gabbes/stringify-object-keys.svg?branch=master)](https://travis-ci.org/gabbes/stringify-object-keys) [![npm](https://img.shields.io/npm/v/stringify-object-keys.svg)](https://www.npmjs.com/package/stringify-object-keys)
+# Stringify Object Keys [![npm](https://img.shields.io/npm/v/stringify-object-keys.svg)](https://www.npmjs.com/package/stringify-object-keys)
 
 > Get stringified keys from an object or array.
 
@@ -15,17 +15,20 @@ npm install --save stringify-object-keys
 ## Usage
 
 ```js
-const stringify = require('stringify-object-keys');
+const stringify = require("stringify-object-keys");
 
 const family = {
-  lastname: 'Bluth',
-  members: [{
-    firstname: 'Nichael',
-    nicknames: []
-  }, {
-    'first.name': 'George',
-    nicknames: ['GOB', 'Getaway']
-  }]
+  lastname: "Bluth",
+  members: [
+    {
+      firstname: "Nichael",
+      nicknames: []
+    },
+    {
+      "first.name": "George",
+      nicknames: ["GOB", "Getaway"]
+    }
+  ]
 };
 
 console.log(stringify(family));
@@ -41,10 +44,6 @@ console.log(stringify(family));
   ]
 */
 ```
-
-## Contribute
-
-[Contribution guidelines.](./CONTRIBUTING.md)
 
 ## Changelog
 
