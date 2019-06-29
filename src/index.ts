@@ -1,9 +1,11 @@
-"use strict";
+export = function(tree: { [key: string]: any }) {
+  var array: string[] = [];
 
-module.exports = function(tree) {
-  var array = [];
-
-  function walk(obj, keys, path) {
+  function walk(
+    obj: { [key: string]: any },
+    keys: string[],
+    path: string
+  ): void {
     for (var i = 0; i < keys.length; i++) {
       var key = keys[i];
       var branch = path;

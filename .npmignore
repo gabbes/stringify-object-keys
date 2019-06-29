@@ -1,4 +1,5 @@
 .gitattributes
 .prettierrc
+src
 test.js
 yarn.lock

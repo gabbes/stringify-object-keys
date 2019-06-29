@@ -1,6 +1,6 @@
 const assert = require("assert");
 const _get = require("lodash.get");
-const stringify = require("./");
+const stringify = require("./dist");
 
 describe("stringify-object-keys", () => {
   it("handles invalid parameter", () => {
