@@ -2,4 +2,5 @@
 .prettierrc
 src
 test.js
+tsconfig.json
 yarn.lock
