@@ -2,10 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
-## 1.2.5 - 2019-06-29
+## 1.3.0 - 2019-06-29
+
+### Added
+
+- Fixed a bug with nested undefined or null values.
 
 ### Changed
 
+- Stricter tests.
 - Doesn't publish tsconfig.json anymore.
 
 ## 1.2.4 - 2019-06-29
