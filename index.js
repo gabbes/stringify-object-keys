@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 module.exports = function(tree) {
   var array = [];
@@ -10,17 +10,17 @@ module.exports = function(tree) {
 
       // Determine format and append to branch
       if (Array.isArray(obj)) {
-        branch += '[' + key + ']';
-      } else if (key.indexOf('.') !== -1) {
-        branch += '[\'' + key + '\']';
+        branch += "[" + key + "]";
+      } else if (key.indexOf(".") !== -1) {
+        branch += "['" + key + "']";
       } else if (branch) {
-        branch += '.' + key;
+        branch += "." + key;
       } else {
         branch += key;
       }
 
       // If key value is an object with keys, walk it
-      if (typeof obj[key] === 'object') {
+      if (typeof obj[key] === "object") {
         var objKeys = Object.keys(obj[key]);
 
         if (objKeys.length) {
@@ -33,8 +33,8 @@ module.exports = function(tree) {
   }
 
   // If received tree is an object, initialize walk
-  if (!!tree && typeof tree === 'object') {
-    walk(tree, Object.keys(tree), '');
+  if (!!tree && typeof tree === "object") {
+    walk(tree, Object.keys(tree), "");
   }
 
   return array;
