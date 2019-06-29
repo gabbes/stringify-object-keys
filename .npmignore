@@ -1,7 +1,5 @@
 .editorconfig
-.eslintignore
-.eslintrc.yml
+.prettierrc
 .gitattributes
-.travis.yml
 CONTRIBUTING.md
 test.js
