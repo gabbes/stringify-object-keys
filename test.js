@@ -18,8 +18,8 @@ describe("stringify-object-keys", () => {
 
   describe("object parameter", () => {
     it("handles objects", () => {
-      const obj = { a: "a", b: { c: "c", d: { e: { f: "f" } } } };
-      const expected = ["a", "b.c", "b.d.e.f"];
+      const obj = { a: "a", b: { c: "c", d: { e: { f: "f" } } }, g: "g" };
+      const expected = ["a", "b.c", "b.d.e.f", "g"];
 
       assert.deepEqual(stringify(obj), expected);
     });
@@ -32,8 +32,15 @@ describe("stringify-object-keys", () => {
     });
 
     it("handles empty objects", () => {
-      const obj = [1, {}, 2];
-      const expected = ["[0]", "[1]", "[2]"];
+      const obj = [1, {}, 2, { a: {} }, 4];
+      const expected = ["[0]", "[1]", "[2]", "[3].a", "[4]"];
+
+      assert.deepEqual(stringify(obj), expected);
+    });
+
+    it("handles null or undefined values", () => {
+      const obj = { a: undefined, b: { c: null }, d: "d" };
+      const expected = ["a", "b.c", "d"];
 
       assert.deepEqual(stringify(obj), expected);
     });
@@ -41,15 +48,22 @@ describe("stringify-object-keys", () => {
 
   describe("array parameter", () => {
     it("handles arrays", () => {
-      const obj = ["a", ["b", "c", ["d"]]];
-      const expected = ["[0]", "[1][0]", "[1][1]", "[1][2][0]"];
+      const obj = ["a", ["b", "c", ["d"]], "e"];
+      const expected = ["[0]", "[1][0]", "[1][1]", "[1][2][0]", "[2]"];
 
       assert.deepEqual(stringify(obj), expected);
     });
 
     it("handles empty arrays", () => {
-      const obj = [1, [], 2];
-      const expected = ["[0]", "[1]", "[2]"];
+      const obj = [1, [], 2, [[[]]], 3];
+      const expected = ["[0]", "[1]", "[2]", "[3][0][0]", "[4]"];
+
+      assert.deepEqual(stringify(obj), expected);
+    });
+
+    it("handles undefined or null values", () => {
+      const obj = [undefined, null, [undefined], false];
+      const expected = ["[0]", "[1]", "[2][0]", "[3]"];
 
       assert.deepEqual(stringify(obj), expected);
     });
@@ -57,8 +71,8 @@ describe("stringify-object-keys", () => {
 
   describe("mixed object/array parameter", () => {
     it("handles mixed object/array", () => {
-      const obj = ["a", { b: "b", c: ["c", { "d.d": "d" }] }];
-      const expected = ["[0]", "[1].b", "[1].c[0]", "[1].c[1]['d.d']"];
+      const obj = ["a", { b: "b", c: ["c", { "d.d": "d" }] }, {}];
+      const expected = ["[0]", "[1].b", "[1].c[0]", "[1].c[1]['d.d']", "[2]"];
 
       assert.deepEqual(stringify(obj), expected);
     });
