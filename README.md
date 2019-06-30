@@ -32,17 +32,19 @@ const family = {
 };
 
 console.log(stringify(family));
+```
 
-/*
-  [
-    'lastname',
-    'members[0].firstname',
-    'members[0].nicknames',
-    'members[1][\'first.name\']',
-    'members[1].nicknames[0]'
-    'members[1].nicknames[1]'
-  ]
-*/
+This would result in the following output:
+
+```js
+[
+  "lastname",
+  "members[0].firstname",
+  "members[0].nicknames",
+  "members[1]['first.name']",
+  "members[1].nicknames[0]"
+  "members[1].nicknames[1]"
+]
 ```
 
 ## Changelog
