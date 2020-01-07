@@ -18,11 +18,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/gabbes/stringify-object-keys.git"
+    "url": "https://github.com/gabts/stringify-object-keys.git"
   },
-  "homepage": "https://github.com/gabbes/stringify-object-keys#readme",
+  "homepage": "https://github.com/gabts/stringify-object-keys#readme",
   "bugs": {
-    "url": "https://github.com/gabbes/stringify-object-keys/issues"
+    "url": "https://github.com/gabts/stringify-object-keys/issues"
   },
   "scripts": {
     "test": "mocha"
